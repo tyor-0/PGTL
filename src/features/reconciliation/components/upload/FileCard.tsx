@@ -27,19 +27,19 @@ interface FileCardProps {
 
 export function FileCard({ fileState }: FileCardProps) {
   const { file, preview, previewLoading, previewError } = fileState;
-  const large = isLargeFile(file);
-
+  const large = file ? isLargeFile(file) : false;
+  
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden">
       {/* ── Card header ─────────────────────────────────────────────────── */}
       <div className="flex items-center justify-between border-b border-zinc-800 px-4 py-3">
         <div className="flex items-center gap-2 min-w-0">
           <span className="text-xs font-medium text-zinc-300 truncate">
-            {file.name}
+            {file?.name}
           </span>
         </div>
         <span className="ml-3 flex-shrink-0 text-xs text-zinc-500">
-          {formatFileSize(file.size)}
+          {formatFileSize(file?.size ?? 0)}
         </span>
       </div>
 

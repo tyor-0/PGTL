@@ -128,7 +128,7 @@ export interface CsvPreviewResult {
 
 // ─── Upload form state ─────────────────────────────────────────────────────────
 export interface UploadedFileState {
-  file: File;
+  file: File | null;
   preview: CsvPreviewResult | null;
   previewLoading: boolean;
   previewError: string | null;
