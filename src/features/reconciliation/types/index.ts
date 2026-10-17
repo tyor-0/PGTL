@@ -1,18 +1,3 @@
-/*
-WHAT THIS FILE DOES:
-Defines every TypeScript type used across the reconciliation feature.
-
-WHY IT EXISTS:
-Single source of truth for types. Every API response, hook param, and
-component prop that touches reconciliation data is typed from here.
-Changing a type here surfaces all breakages at compile time.
-
-HOW IT WORKS:
-Plain TypeScript interfaces and enums. No runtime code.
-Imported by api/, hooks/, and components/ within this feature.
-*/
-
-// ─── Job lifecycle ─────────────────────────────────────────────────────────────
 export type JobStatus = "pending" | "processing" | "completed" | "failed";
 
 export interface Job {
